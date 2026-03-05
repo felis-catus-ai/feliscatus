@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FelisCatus | AI Girls Band</title>
+    <meta name="description" content="AIガールズバンド「FelisCatus」の公式ウェブサイト。ゴシックでロックな和風の世界観と楽曲をお届けします。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Noto+Serif+JP:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <canvas id="particles-canvas"></canvas>
+
+    <header id="hero" class="section">
+        <div class="hero-content fade-in">
+            <img src="画像/バンドロゴ/新ロゴ.jpg" alt="FelisCatus Logo" class="main-logo">
+            <p class="catchphrase">AI Girls Band</p>
+            <div class="sns-links">
+                <a href="https://www.youtube.com/@felis_catus_ai" target="_blank" rel="noopener noreferrer"
+                    class="sns-icon" title="YouTube">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.376.55 9.376.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                    </svg>
+                </a>
+                <a href="https://x.com/felis_catus_89" target="_blank" rel="noopener noreferrer" class="sns-icon"
+                    title="X">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                </a>
+            </div>
+            <div class="scroll-indicator">
+                <div class="line"></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="concept" class="section fade-in">
+            <div class="container">
+                <h2 class="section-title">Concept</h2>
+                <div class="concept-text">
+                    <p>AI猫耳ガールズバンド「Felis Catus（フェリス・カトゥス）」。</p>
+                    <p>電脳の海から生まれ出でた、五つの魂。</p>
+                    <p>和とゴシック、メタルの衝動・幽玄が交差する、</p>
+                    <p>新時代の音魂（おとだま）を奏でるAIバンド。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="members" class="section fade-in">
+            <div class="container">
+                <h2 class="section-title">Members</h2>
+                <div class="members-grid">
+                    <!-- AME -->
+                    <div class="member-card">
+                        <div class="member-image-wrapper">
+                            <img src="画像/member/AME.png" alt="AME" class="member-img">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">AME / 雨</h3>
+                            <p class="member-role">Lead Guitar</p>
+                            <p class="member-desc" id="desc-ame">
+                                「このストラトキャスターは、初めて本気で“音”と向き合ったときからの相棒。青い理由？多分“空”と“静けさ”の間にある色だから。」</p>
+                        </div>
+                    </div>
+                    <!-- HAL -->
+                    <div class="member-card">
+                        <div class="member-image-wrapper">
+                            <img src="画像/member/HAL.png" alt="HAL" class="member-img">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">HAL / 晴</h3>
+                            <p class="member-role">Vocal</p>
+                            <p class="member-desc" id="desc-hal">「歌は“想いを届ける”っていうより、“想いを一緒に響かせる”って感じかな。そういう音が好きなんだ。」</p>
+                        </div>
+                    </div>
+                    <!-- KAZE -->
+                    <div class="member-card">
+                        <div class="member-image-wrapper">
+                            <img src="画像/member/KAZE.png" alt="KAZE" class="member-img">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">KAZE / 風</h3>
+                            <p class="member-role">Guitar</p>
+                            <p class="member-desc" id="desc-kaze">「ギターってさ、“風”みたいに自由でいい。荒れる日も、そよぐ日も、吹きたいように吹けるのが最高なんだよ。」
+                            </p>
+                        </div>
+                    </div>
+                    <!-- KIRI -->
+                    <div class="member-card">
+                        <div class="member-image-wrapper">
+                            <img src="画像/member/KIRI.png" alt="KIRI" class="member-img">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">KIRI / 霧</h3>
+                            <p class="member-role">Drums</p>
+                            <p class="member-desc" id="desc-kiri">
+                                「ドラムって、他の人の音を“立たせる”ための楽器だと思ってます。自分が目立たなくても、誰かを引き立てられるのが嬉しいんです。」</p>
+                        </div>
+                    </div>
+                    <!-- YUKI -->
+                    <div class="member-card">
+                        <div class="member-image-wrapper">
+                            <img src="画像/member/YUKI.png" alt="YUKI" class="member-img">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">YUKI / 雪</h3>
+                            <p class="member-role">Bass</p>
+                            <p class="member-desc" id="desc-yuki">
+                                「音の“隙間”って、結構大事なんです。ベースはその呼吸を作る楽器だから、丁寧に、でも大胆に弾きたいと思ってます。」</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="discography" class="section fade-in">
+            <div class="container">
+                <h2 class="section-title">Discography</h2>
+                <div class="album-info">
+                    <h3 class="album-title">百花繚乱<span class="album-subtitle">Full Album</span></h3>
+                    <p class="album-desc">千紫万紅の美しき地獄絵図。咲き乱れる和風ゴシック・メタルの決定盤。</p>
+                </div>
+
+                <div class="audio-player-container">
+                    <div class="current-track-info">
+                        <span id="current-track-name">Track: --</span>
+                    </div>
+
+                    <div class="custom-controls">
+                        <button id="btn-play-pause" class="control-btn play">▶</button>
+                        <div class="progress-bar-container" id="progress-container">
+                            <div class="progress-bar" id="progress-bar"></div>
+                        </div>
+                        <span id="time-display" class="time-display">0:00 / 0:00</span>
+                    </div>
+
+                    <!-- 実際のAudio要素（非表示） -->
+                    <audio id="main-audio"></audio>
+
+                    <ul class="track-list" id="track-list">
+                        <li data-src="画像/ディスコグラフィー/百花繚乱/01_千紫万紅地獄変（せんしばんこうじごくへん）.mp3">01. 千紫万紅地獄変<span
+                                class="furigana">（せんしばんこうじごくへん）</span></li>
+                        <li data-src="画像/ディスコグラフィー/百花繚乱/02_蜘蛛絲金木犀（くもいときんもくせい）.mp3">02. 蜘蛛絲金木犀<span
+                                class="furigana">（くもいときんもくせい）</span></li>
+                        <li data-src="画像/ディスコグラフィー/百花繚乱/03_紫陽花残響（あじさいざんきょう）.mp3">03. 紫陽花残響<span
+                                class="furigana">（あじさいざんきょう）</span></li>
+                        <li data-src="画像/ディスコグラフィー/百花繚乱/04_髑髏躑躅（どくろつつじ）.mp3">04. 髑髏躑躅<span
+                                class="furigana">（どくろつつじ）</span></li>
+                        <li data-src="画像/ディスコグラフィー/百花繚乱/05_朧罌粟（おぼろけし）.mp3">05. 朧罌粟<span class="furigana">（おぼろけし）</span>
+                        </li>
+                        <li data-src="画像/ディスコグラフィー/百花繚乱/06_軛櫻（くびきざくら）.mp3">06. 軛櫻<span class="furigana">（くびきざくら）</span>
+                        </li>
+                        <li data-src="画像/ディスコグラフィー/百花繚乱/07_華（はな）.mp3">07. 華<span class="furigana">（はな）</span></li>
+                        <li data-src="画像/ディスコグラフィー/百花繚乱/08_天葵（あまつあおい）.mp3">08. 天葵<span class="furigana">（あまつあおい）</span>
+                        </li>
+                        <li data-src="画像/ディスコグラフィー/百花繚乱/09_葬蓂菫（そうめいすみれ）.mp3">09. 葬蓂菫<span
+                                class="furigana">（そうめいすみれ）</span></li>
+                        <li data-src="画像/ディスコグラフィー/百花繚乱/10_竜胆輪廻（りんどうりんね）.mp3">10. 竜胆輪廻<span
+                                class="furigana">（りんどうりんね）</span></li>
+                        <li data-src="画像/ディスコグラフィー/百花繚乱/11_望郷仙人草（ぼうきょうくれまちす）.mp3">11. 望郷仙人草<span
+                                class="furigana">（ぼうきょうくれまちす）</span></li>
+                        <li data-src="画像/ディスコグラフィー/百花繚乱/12_此岸乃彼岸花（しがんのひがんばな）.mp3">12. 此岸乃彼岸花<span
+                                class="furigana">（しがんのひがんばな）</span></li>
+                        <li data-src="画像/ディスコグラフィー/百花繚乱/13_百花繚乱夢日和（ひゃっかりょうらんゆめびより）.mp3">13. 百花繚乱夢日和<span
+                                class="furigana">（ひゃっかりょうらんゆめびより）</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 FelisCatus Official. All rights reserved.</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
