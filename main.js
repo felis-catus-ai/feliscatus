@@ -32,6 +32,70 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 100);
 
     // --------------------------------------------------------
+    // オーディオプレイヤーの実装 (Single Player)
+    // --------------------------------------------------------
+    const audio = document.getElementById('main-audio');
+    if (audio) {
+        const playBtn = document.getElementById('btn-play-pause');
+        const progressBar = document.getElementById('progress-bar');
+        const progressContainer = document.getElementById('progress-container');
+        const timeDisplay = document.getElementById('time-display');
+
+        let isPlaying = false;
+
+        function formatTime(seconds) {
+            if (isNaN(seconds)) return "0:00";
+            const m = Math.floor(seconds / 60);
+            const s = Math.floor(seconds % 60);
+            return `${m}:${s.toString().padStart(2, '0')}`;
+        }
+
+        playBtn.addEventListener('click', () => {
+            if (isPlaying) {
+                audio.pause();
+                playBtn.textContent = '▶';
+                isPlaying = false;
+            } else {
+                const playPromise = audio.play();
+                if (playPromise !== undefined) {
+                    playPromise.then(() => {
+                        playBtn.textContent = '⏸';
+                        isPlaying = true;
+                    }).catch(error => {
+                        console.error('Audio playback failed:', error);
+                        playBtn.textContent = '▶';
+                        isPlaying = false;
+                        alert('音声の再生に失敗しました。読み込み中、もしくはファイルが見つかりません。');
+                    });
+                }
+            }
+        });
+
+        audio.addEventListener('timeupdate', () => {
+            const percent = (audio.currentTime / audio.duration) * 100;
+            progressBar.style.width = `${percent}%`;
+            timeDisplay.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
+        });
+
+        audio.addEventListener('loadedmetadata', () => {
+            timeDisplay.textContent = `0:00 / ${formatTime(audio.duration)}`;
+        });
+
+        audio.addEventListener('ended', () => {
+            isPlaying = false;
+            playBtn.textContent = '▶';
+            progressBar.style.width = '0%';
+        });
+
+        progressContainer.addEventListener('click', (e) => {
+            if (isNaN(audio.duration)) return;
+            const rect = progressContainer.getBoundingClientRect();
+            const pos = (e.clientX - rect.left) / rect.width;
+            audio.currentTime = pos * audio.duration;
+        });
+    }
+
+    // --------------------------------------------------------
     // 背景パーティクル（火の粉・花びら）エフェクト
     // --------------------------------------------------------
     const canvas = document.getElementById('particles-canvas');
