@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://felis-catus-ai.github.io/feliscatus/sitemap.xml
