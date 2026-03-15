@@ -18,6 +18,11 @@
     box-sizing: border-box;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 body {
     background-color: var(--c-bg);
     color: var(--c-text);
@@ -314,9 +319,37 @@ h3,
 }
 
 /* Discography Section */
+.discography-item {
+    margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.jacket-wrapper {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 30px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(201, 23, 30, 0.3);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.jacket-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-standard);
+}
+
+.jacket-wrapper:hover .jacket-img {
+    transform: scale(1.05);
+}
+
 .album-info {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .album-title {
@@ -372,7 +405,8 @@ h3,
     border: 1px solid rgba(201, 23, 30, 0.3);
     padding: 30px;
     border-radius: 12px;
-    max-width: 800px;
+    width: 100%;
+    max-width: 600px;
     margin: 0 auto;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
